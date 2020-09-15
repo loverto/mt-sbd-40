@@ -1,0 +1,108 @@
+{
+  "name": "mt-sbd-40",
+  "version": "1.0.0",
+  "description": "MT鼠标垫40排版工具",
+  "main": "src/main/main.js",
+  "scripts": {
+    "electron-rebuild": "electron-rebuild",
+    "release": "electron-builder --publish always",
+    "dev": "vue-cli-service electron:serve",
+    "lint": "tslint src/**/*.ts -- --fix",
+    "dist-win": "electron-builder --win --ia32",
+    "start": "chcp 65001 && electron .",
+    "changelog": "conventional-changelog-writer -p angular -i CHANGELOG.md -s -r 0",
+    "log": "conventional-changelog",
+    "package": "electron-packager . HelloWorld --platform=win32 --arch=ia32 --icon=icon.ico --out=./out --asar --app-version=0.0.1",
+    "rebuildwinax:gyp": "cd ./node_modules/winax && node-gyp rebuild --arch=ia32 --build-from-source --runtime=electron --msvs_version=2017  --target=8.2.4 --dist-url=https://www.electronjs.org/headers",
+    "rebuildsleep:gyp": "cd ./node_modules/sleep && node-gyp rebuild --runtime=electron --msvs_version=2017  --target=6.0.9 --dist-url=https://npm.taobao.org/mirrors/atom-shell"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "build": {
+    "appId": "com.yinlongfei.mt.sbd.40",
+    "win": {
+      "requestedExecutionLevel": "requireAdministrator",
+      "icon": "public/img/icons/android-chrome-512x512.png"
+    },
+    "publish": [
+      {
+        "provider": "s3",
+        "bucket": "mt-sbd-40-package-app",
+        "endpoint": "http://minio.xintonglu.top/"
+      }
+    ],
+    "npmArgs": [
+      "--runtime=electron",
+      "--msvs_version=2017",
+      "--target=6.0.9",
+      "--dist-url=https://npm.taobao.org/mirrors/atom-shell"
+    ],
+    "npmRebuild": false
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "yinlongfei",
+  "license": "ylf-1.0",
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@types/fs-extra": "^8.0.1",
+    "@types/inquirer": "^6.5.0",
+    "@types/lowdb": "^1.0.9",
+    "@types/node": "10.17.6",
+    "@types/request-promise-native": "^1.0.17",
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-plugin-router": "^4.0.0",
+    "@vue/cli-plugin-typescript": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/eslint-config-typescript": "^4.0.0",
+    "commitizen": "^4.0.3",
+    "conventional-changelog": "^3.1.18",
+    "cz-customizable": "^6.2.0",
+    "electron": "8.2.4",
+    "electron-builder": "22.4.1",
+    "electron-packager": "14.2.1",
+    "electron-rebuild": "1.10.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "husky": "^3.1.0",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "tslint": "^5.10.0",
+    "tslint-config-standard": "^7.0.0",
+    "typescript": "~3.7.3",
+    "vue-cli-plugin-electron-builder": "^1.4.2",
+    "vue-property-decorator": "^8.3.0",
+    "vue-template-compiler": "^2.6.10",
+    "winax": "^1.18.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "log4js": "6.2.0",
+    "core-js": "^3.3.2",
+    "dayjs": "^1.7.4",
+    "@loverto/dm.dll": "1.1.4",
+    "electron-log": "^4.1.1",
+    "electron-updater": "4.2.5",
+    "element-ui": "^2.13.0",
+    "fix-path": "^2.1.0",
+    "fs-extra": "^8.1.0",
+    "keycode": "2.2.0",
+    "lodash-id": "^0.14.0",
+    "lowdb": "^1.0.0",
+    "vue": "^2.6.10",
+    "vue-gallery": "^2.0.1",
+    "vue-lazyload": "^1.2.6",
+    "vue-router": "^3.1.3"
+  }
+}
