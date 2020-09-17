@@ -210,11 +210,11 @@ function openUModel(modelPath) {
  */
 function importUModel(path) {
     ctrlAndI();
-    sleep.msleep(200)
+    sleep.msleep(400)
     dmExt.setClipboard(path);
-    sleep.msleep(200)
+    sleep.msleep(400)
     ctrlAndV();
-    sleep.msleep(200)
+    sleep.msleep(400)
     enter();
     sleep.msleep(1500)
 }
