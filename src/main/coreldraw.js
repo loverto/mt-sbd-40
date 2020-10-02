@@ -266,7 +266,9 @@ function saveAsPath(path) {
  * @param coor 操作坐标
  */
 function moveAndClick(coor) {
+    console.info(coor);
     dm.moveTo(coor[0],coor[1]);
+    sleep.msleep(100);
     dm.leftClick()
 }
 

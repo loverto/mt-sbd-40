@@ -5,7 +5,7 @@ let mouseInitThirdPosition = "693,536";
 // 鼠标垫位置数组
 let mousePosition = [];
 // 鼠标垫的列数
-let mouse = 3;
+let mouse = 1;
 // 鼠标垫的行数
 let mouseRow = 65;
 
@@ -30,7 +30,7 @@ function initPosition(mouseRow) {
     console.warn("随机数是:"+randomW);
     for (let j =0,w = 0; j < mouseRow; j++) {
         positionArr = currentPosition.split(",");
-        if(w<10&& randomW>=0){
+        if(w<10&& randomW>0){
             y = y1;
             randomW--;
         }else {
