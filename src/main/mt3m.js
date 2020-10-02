@@ -47,7 +47,7 @@ logger.debug(dm.dll.ver())
 
 let db = null;
 // 蒙泰彩色电子出版系统 V6.0(普及版) - [40模板(1).tpf (0.7%)]
-const windowTitle = "蒙泰彩色电子出版系统 V6.0(普及版)";
+const windowTitle = "蒙泰彩色电子出版系统";
 let devWidth = 1440
 let devHeight = 900
 let screenSize = dm.getScreenSize();
