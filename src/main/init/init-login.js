@@ -31,7 +31,7 @@ let totalmem = os.totalmem();
 let networkInterfaces = os.networkInterfaces();
 
 if (!db.get("hostname")){
-    hostname = hostname+machineCode+new Date().getTime();
+    hostname = hostname;
     db.set("hostname",hostname)
 }else {
     hostname = db.get("hostname");
@@ -74,7 +74,7 @@ loginByUsername.then(()=>{
 }).then(response=>{
     console.log("检测计算机是否存在:"+JSON.stringify(response.data));
     if(response.data.length==0){
-        return  saveOrUpdate({machineCode:machineCode,name:hostname});
+        return  saveOrUpdate({machineCode:machineCode,name:hostname,code:'备注名称:'+hostname});
     }else {
         return new Promise((resolve, reject) => {
             resolve({data:response.data[0]})
