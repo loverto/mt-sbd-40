@@ -82,7 +82,6 @@ window.addEventListener('DOMContentLoaded', () => {
             modelFilePathText.value = configObject.modelFilePath;
             exportModelFilePathText.value = configObject.exportModelFilePath;
             pchText.value = configObject.pch;
-            codeText.value = configObject.code;
         }
     })
 
@@ -208,7 +207,6 @@ window.addEventListener('DOMContentLoaded', () => {
         modelFilePathText.value = configObject.modelFilePath;
         exportModelFilePathText.value = configObject.exportModelFilePath;
         pchText.value = configObject.pch;
-        codeText.value = configObject.code;
     }
 
     const start = $('start');
