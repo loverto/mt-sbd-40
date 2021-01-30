@@ -1,6 +1,6 @@
 {
   "name": "mt-sbd-40",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "MT鼠标垫40排版工具",
   "main": "dist/main/main.js",
   "scripts": {

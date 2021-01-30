@@ -23,7 +23,7 @@ log4js.configure({
 
 const logger = log4js.getLogger('stb');
 
-const {DB} = require('../universal/database')
+const {DB} = require('./database')
 
 let keepTable = new Map()
 let value = [1, 2]
